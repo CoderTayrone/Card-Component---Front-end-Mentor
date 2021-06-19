@@ -43,14 +43,14 @@ img-height: 446 / 590
 }
 .containerCard{
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between;  
 }
 .imgCard, .contentCard{
     flex: 1;
     position: relative;
 }
 .imgCard img{
-    width: 540px;    
+    max-width: 540px;    
     max-height: 446px;
     border-top-right-radius: 12px;
     border-bottom-right-radius: 12px;
@@ -58,6 +58,8 @@ img-height: 446 / 590
 .imgCard::after{
     position: absolute;
     content: '';
+    border-top-right-radius: 12px;
+    border-bottom-right-radius: 12px;
     width: 100%;
     top: 0;
     left: 0;
@@ -96,4 +98,27 @@ img-height: 446 / 590
     font-weight: 700;
     font-size: 36px;
     margin-bottom: 24px;
+}
+
+@media screen and (max-width: 720px){
+    .containerCard{
+        flex-direction: column-reverse; 
+    }
+    .contentCard{
+        margin: 0;
+        padding: 24px 0;
+        max-height: 100%;
+    } 
+    .contentCard h1, .contentCard li, .contentCard p{
+        margin-bottom: 12px;
+    }   
+    .imgCard img{
+        max-width: 100%;
+    }
+    .contentCard ul{
+        flex-direction: column;
+    }
+    body{
+        text-align: center;
+    }
 }
